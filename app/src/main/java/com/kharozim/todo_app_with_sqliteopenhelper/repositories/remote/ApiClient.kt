@@ -1,4 +1,4 @@
-package com.kharozim.todo_app_with_sqliteopenhelper.remote
+package com.kharozim.todo_app_with_sqliteopenhelper.repositories.remote
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
