@@ -6,13 +6,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.kharozim.todo_app_with_sqliteopenhelper.R
+import com.kharozim.todo_app_with_sqliteopenhelper.adapters.ViewPagerAdapter
+import com.kharozim.todo_app_with_sqliteopenhelper.databinding.FragmentTodoBinding
 
 class TodoFragment : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+private lateinit var binding : FragmentTodoBinding
 
-        return inflater.inflate(R.layout.fragment_todo, container, false)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = FragmentTodoBinding.inflate(inflater, container, false).apply {
+
+
+        }
+
+        return binding.root
     }
 
 }
