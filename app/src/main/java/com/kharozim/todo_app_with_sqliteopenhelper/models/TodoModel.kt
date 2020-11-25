@@ -23,4 +23,4 @@ data class TodoModel(
 
     @field:SerializedName("updatedAt")
     val updatedAt: String
-)
+) : Parcelable
