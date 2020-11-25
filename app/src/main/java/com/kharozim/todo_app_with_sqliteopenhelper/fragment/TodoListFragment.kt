@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.google.gson.Gson
 import com.kharozim.todo_app_with_sqliteopenhelper.R
+import com.kharozim.todo_app_with_sqliteopenhelper.adapters.TodoAdapter
 import com.kharozim.todo_app_with_sqliteopenhelper.databinding.FragmentTodoListBinding
 import com.kharozim.todo_app_with_sqliteopenhelper.repositories.remote.ApiClient
 import com.kharozim.todo_app_with_sqliteopenhelper.repositories.remote.TodoResponse
@@ -17,12 +18,16 @@ import retrofit2.Response
 
 class TodoListFragment : Fragment() {
 
-private lateinit var binding : FragmentTodoListBinding
+    private lateinit var binding: FragmentTodoListBinding
+    private val adapter by lazy { TodoAdapter(requireContext()) }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentTodoListBinding.inflate(inflater, container, false).apply {
+
+            rvUsersFragment.adapter = adapter
 
             ApiClient.userService.getAllTodo().enqueue(object : Callback<TodoResponse> {
                 override fun onResponse(
@@ -31,10 +36,12 @@ private lateinit var binding : FragmentTodoListBinding
                 ) {
                     if (response.isSuccessful) {
                         response.body()?.let {
+                            adapter.list = it.data
                             Log.d("TAG", "onResponse: ${it.data}")
                         }
                     }
                 }
+
                 override fun onFailure(call: Call<TodoResponse>, t: Throwable) {
                     Log.d("TAG", "onFailure: ${t.message}")
                 }
