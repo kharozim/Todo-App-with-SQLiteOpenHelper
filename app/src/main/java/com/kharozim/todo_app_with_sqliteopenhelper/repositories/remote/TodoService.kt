@@ -3,7 +3,7 @@ package com.kharozim.todo_app_with_sqliteopenhelper.repositories.remote
 import retrofit2.Call
 import retrofit2.http.*
 
-interface TodoService {
+interface gitTodoService {
     @GET("api/v1/todos")
     fun getAllTodo(): Call<TodoResponse>
 
