@@ -51,21 +51,21 @@ class TodoListFragment : Fragment() {
 
             })
 
-            btnAdd.setOnClickListener {
+         /*   btnAdd.setOnClickListener {
                 val formatter = SimpleDateFormat("MMM dd yyyy HH:mma")
 
                 val todoModel = TodoResponse(
-                    data = List(TodoModel),
+                    data = List(TodoModel)
                     message = tieAdd.text.toString(),
                     status = false
                 )
                 insertTodo(todoModel)
-            }
+            }*/
         }
         return binding.root
     }
 
-    private fun insertTodo(todoList: ProductModel) {
+   /* private fun insertTodo(todoList: ProductModel) {
         ProductClient.service.insertProduct(productModel).enqueue(object : Callback<ProductModel> {
             override fun onResponse(call: Call<ProductModel>, response: Response<ProductModel>) {
                 if (response.isSuccessful) Toast.makeText(
@@ -79,6 +79,6 @@ class TodoListFragment : Fragment() {
                 onError(t)
             }
         })
-    }
+    }*/
 
 }
