@@ -1,5 +1,7 @@
 package com.kharozim.todo_app_with_sqliteopenhelper.repositories.remote
 
+import com.kharozim.todo_app_with_sqliteopenhelper.models.EditModel
+import com.kharozim.todo_app_with_sqliteopenhelper.models.InsertModel
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -9,17 +11,16 @@ interface TodoService {
 
     @POST("api/v1/todos")
     fun insertTodo(
-        @Query("task") task: String,
-        @Query("status") status: String
+        @Body task: InsertModel,
     ): Call<TodoResponse>
 
-    @PUT("api/v1/todos/91")
+    @PUT("api/v1/todos/{91}")
     fun putTodo(
-        @Query("task") task: String,
-        @Query("status") status: String
-    ): Call<TodoResponse>
+        @Path("id") id: Int,
+        @Body task: EditModel,
+        ): Call<TodoResponse>
 
-    @DELETE("api/v1/todos/91")
+    @DELETE("api/v1/todos/{id}")
     fun deleteTodo(@Path("id") id: Int): Call<TodoResponse>
 
 }
