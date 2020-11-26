@@ -6,7 +6,7 @@
     app:startDestination="@id/todoListFragment2">
     <fragment
         android:id="@+id/todoListFragment2"
-        android:name="com.kharozim.todo_app_with_sqliteopenhelper.fragment.TodoListFragment"
+        android:name="com.kharozim.todo_app_with_sqliteopenhelper.view.fragment.TodoListFragment"
         android:label="fragment_todo_list"
         tools:layout="@layout/fragment_todo_list" >
         <action
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/todoDetailFragment"
-        android:name="com.kharozim.todo_app_with_sqliteopenhelper.fragment.TodoDetailFragment"
+        android:name="com.kharozim.todo_app_with_sqliteopenhelper.view.fragment.TodoDetailFragment"
         android:label="fragment_todo_detail"
         tools:layout="@layout/fragment_todo_detail" />
 </navigation>

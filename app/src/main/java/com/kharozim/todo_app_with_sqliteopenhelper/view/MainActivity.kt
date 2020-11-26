@@ -1,15 +1,14 @@
-package com.kharozim.todo_app_with_sqliteopenhelper
+package com.kharozim.todo_app_with_sqliteopenhelper.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.viewpager2.widget.ViewPager2
-import com.kharozim.todo_app_with_sqliteopenhelper.adapters.ViewPagerAdapter
+import com.kharozim.todo_app_with_sqliteopenhelper.R
 import com.kharozim.todo_app_with_sqliteopenhelper.databinding.ActivityMainBinding
-import com.kharozim.todo_app_with_sqliteopenhelper.databinding.FragmentTodoBinding
-import com.kharozim.todo_app_with_sqliteopenhelper.fragment.FavoritesFragment
-import com.kharozim.todo_app_with_sqliteopenhelper.fragment.ProfileFragment
-import com.kharozim.todo_app_with_sqliteopenhelper.fragment.TodoListFragment
+import com.kharozim.todo_app_with_sqliteopenhelper.view.fragment.FavoritesFragment
+import com.kharozim.todo_app_with_sqliteopenhelper.view.fragment.ProfileFragment
+import com.kharozim.todo_app_with_sqliteopenhelper.view.fragment.TodoListFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

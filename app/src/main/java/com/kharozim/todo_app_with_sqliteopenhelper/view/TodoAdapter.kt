@@ -1,4 +1,4 @@
-package com.kharozim.todo_app_with_sqliteopenhelper.adapters
+package com.kharozim.todo_app_with_sqliteopenhelper.view
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -9,6 +9,16 @@ import com.kharozim.todo_app_with_sqliteopenhelper.databinding.ItemTodoListBindi
 import com.kharozim.todo_app_with_sqliteopenhelper.models.TodoModel
 
 class TodoAdapter(private val context: Context) : RecyclerView.Adapter<TodoAdapter.ViewHolder>() {
+
+    private var todoList = mutableListOf<TodoModel>()
+
+
+    fun setData(item: MutableList<TodoModel>){
+        println(item)
+        println("set Data")
+        this.todoList = item
+        notifyDataSetChanged()
+    }
 
     var list = listOf<TodoModel>()
         set(value) {
@@ -27,6 +37,11 @@ class TodoAdapter(private val context: Context) : RecyclerView.Adapter<TodoAdapt
             }
         }
 
+
+    }
+    fun addTodo(todoModel: TodoModel) {
+        todoList.add(0, todoModel)
+        notifyItemInserted(0)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

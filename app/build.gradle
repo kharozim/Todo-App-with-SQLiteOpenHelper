@@ -14,7 +14,7 @@ android {
 
     defaultConfig {
         applicationId "com.kharozim.todo_app_with_sqliteopenhelper"
-        minSdkVersion 23
+        minSdkVersion 26
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"

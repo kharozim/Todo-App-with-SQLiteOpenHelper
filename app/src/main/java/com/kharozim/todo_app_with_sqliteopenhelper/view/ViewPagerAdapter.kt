@@ -1,4 +1,4 @@
-package com.kharozim.todo_app_with_sqliteopenhelper.adapters
+package com.kharozim.todo_app_with_sqliteopenhelper.view
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

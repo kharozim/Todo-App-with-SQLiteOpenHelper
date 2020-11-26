@@ -1,4 +1,4 @@
-package com.kharozim.todo_app_with_sqliteopenhelper.repositories.remote
+package com.kharozim.todo_app_with_sqliteopenhelper.data.remote
 
 import com.kharozim.todo_app_with_sqliteopenhelper.models.EditModel
 import com.kharozim.todo_app_with_sqliteopenhelper.models.InsertModel
@@ -11,14 +11,15 @@ interface TodoService {
 
     @POST("api/v1/todos")
     fun insertTodo(
-        @Body task: InsertModel,
-    ): Call<TodoResponse>
+        @Body
+        body: InsertModel,
+    ): Call<InsertResponse>
 
     @PUT("api/v1/todos/{91}")
     fun putTodo(
         @Path("id") id: Int,
         @Body task: EditModel,
-        ): Call<TodoResponse>
+    ): Call<TodoResponse>
 
     @DELETE("api/v1/todos/{id}")
     fun deleteTodo(@Path("id") id: Int): Call<TodoResponse>
